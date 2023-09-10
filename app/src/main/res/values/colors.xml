@@ -4,4 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="jet">#41393E</color>
     <color name="coolGray">#A4A8D1</color>
+    <color name="arylide_yellow">#E5D352</color>
+    <color name="powder_blue">#A4BFEB</color>
+    <color name="cadet_gray">#8CABBE</color>
+    <color name="orange_wheel">#FF7F11</color>
+    <color name="glaucos">#547AA5</color>
+    <color name="davys_gray">#4F5165</color>
+    <color name="emerald">#70B77E</color>
+    <color name="cardinal">#C41E3D</color>
 </resources>
