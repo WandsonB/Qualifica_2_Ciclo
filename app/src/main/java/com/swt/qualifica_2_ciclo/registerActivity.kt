@@ -37,7 +37,7 @@ class registerActivity : AppCompatActivity() {
             pass = registPass.text.toString()
             passConf = registPassConf.text.toString()
 
-            if (registPass == registPassConf){
+            if (pass == passConf){
                 val intent = Intent(this, loginActivity::class.java)
                 intent.putExtra("name",nome)
                 intent.putExtra("email",email)
