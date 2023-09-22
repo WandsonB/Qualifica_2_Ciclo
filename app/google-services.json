@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "288279993762",
+    "project_id": "care-9f517",
+    "storage_bucket": "care-9f517.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288279993762:android:11d4d4f04d1bdc6e81a6fb",
+        "android_client_info": {
+          "package_name": "com.swt.qualifica_2_ciclo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfDdiVFqMQQ84y2BJjc4GJtnmI-4yW-tQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

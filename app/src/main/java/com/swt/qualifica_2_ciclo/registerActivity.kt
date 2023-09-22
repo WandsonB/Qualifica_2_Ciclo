@@ -7,13 +7,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 
 class registerActivity : AppCompatActivity() {
 
-    private var nome:String = ""
-    private var email:String = ""
-    private var pass:String = ""
-    private var passConf:String = ""
+    private lateinit var auth: FirebaseAuth
 
     private lateinit var registName:EditText
     private lateinit var registEmail:EditText
@@ -25,6 +23,8 @@ class registerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        auth = FirebaseAuth.getInstance()
+
         registName = findViewById<EditText>(R.id.regisName)
         registEmail = findViewById<EditText>(R.id.regisEmail)
         registPass = findViewById<EditText>(R.id.regisPass)
@@ -32,29 +32,32 @@ class registerActivity : AppCompatActivity() {
         btnRegist = findViewById<Button>(R.id.btnCadastro)
 
         btnRegist.setOnClickListener(View.OnClickListener{
-            nome = registName.text.toString()
-            email = registEmail.text.toString()
-            pass = registPass.text.toString()
-            passConf = registPassConf.text.toString()
+            val nome = registName.text.toString()
+            val email = registEmail.text.toString()
+            val pass = registPass.text.toString()
+            val passConf = registPassConf.text.toString()
 
             if (pass == passConf){
-                val intent = Intent(this, loginActivity::class.java)
-                intent.putExtra("name",nome)
-                intent.putExtra("email",email)
-                intent.putExtra("pass",pass)
-                val actLgn = Intent(this,loginActivity::class.java)
-
 
                 if (nome.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty()) {
-                    Toast.makeText(this, "Cadastro feito com sucesso!", Toast.LENGTH_SHORT).show()
-                    startActivity(actLgn)
+                    auth.createUserWithEmailAndPassword(email,pass)
+                        .addOnCompleteListener(this){task ->
+                        if (task.isSuccessful){
+                            Toast.makeText(this, "Cadastro feito com sucesso!", Toast.LENGTH_SHORT).show()
+                            val actLgn = Intent(this, loginActivity::class.java)
+                            irParaLogin()                        }
+                    }
                 } else {
                     Toast.makeText(this, "Preencha todos os campos.", Toast.LENGTH_SHORT).show()
                 }
             }
             else {
-                Toast.makeText(this, "Senhas diferentes!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "As senhas devem ser iguais!", Toast.LENGTH_SHORT).show()
             }
         })
+    }
+    private fun irParaLogin() {
+        val intent = Intent(this, loginActivity::class.java)
+        startActivity(intent)
     }
 }
