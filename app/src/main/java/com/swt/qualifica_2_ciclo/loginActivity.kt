@@ -48,7 +48,7 @@ class loginActivity : AppCompatActivity() {
                         startActivity(goMain)
                         Toast.makeText(this,"Login bem-sucedido! \n Bem-vindo",Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "Email ou senha incorretos.", Toast.LENGTH_SHORT)
+                    Toast.makeText(this, "Erro no login: ${task.exception?.message}", Toast.LENGTH_SHORT)
                         .show()
                     }
                 }
