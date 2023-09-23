@@ -7,5 +7,13 @@
         <item name="android:textSize">18sp</item>
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:background">@drawable/edit_text</item>
+
+    </style>
+    <style name="button">
+        <item name="android:background">@drawable/shape_button</item>
+        <item name="background">@color/celtic_blue</item>
+        <item name="android:layout_width">130dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
     </style>
 </resources>
