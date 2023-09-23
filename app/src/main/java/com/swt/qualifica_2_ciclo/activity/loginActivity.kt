@@ -1,4 +1,4 @@
-package com.swt.qualifica_2_ciclo
+package com.swt.qualifica_2_ciclo.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.swt.qualifica_2_ciclo.R
 
 class loginActivity : AppCompatActivity() {
 
@@ -16,13 +17,17 @@ class loginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login_activity)
+        setContentView(R.layout.activity_login)
 
         auth = FirebaseAuth.getInstance()
 
         val email = findViewById<EditText>(R.id.editTextEmail)
         val pass = findViewById<EditText>(R.id.editTextPass)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val direto = findViewById<Button>(R.id.button)
+        direto.setOnClickListener{
+            goMain()
+        }
 
         val btnRegister = findViewById<Button>(R.id.btnRegister)
         btnRegister.setOnClickListener {
@@ -32,6 +37,7 @@ class loginActivity : AppCompatActivity() {
         btnLostPass.setOnClickListener {
             goRegister()
         }
+
 
         btnLogin.setOnClickListener(View.OnClickListener{
 
@@ -54,6 +60,11 @@ class loginActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    private fun goMain() {
+        val goMain = Intent(this, MainActivity::class.java)
+        startActivity(goMain)
     }
 
     private fun goRegister() {

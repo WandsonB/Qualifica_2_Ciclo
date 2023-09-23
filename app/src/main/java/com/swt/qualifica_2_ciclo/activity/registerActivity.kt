@@ -1,4 +1,4 @@
-package com.swt.qualifica_2_ciclo
+package com.swt.qualifica_2_ciclo.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.swt.qualifica_2_ciclo.R
 
 class registerActivity : AppCompatActivity() {
 

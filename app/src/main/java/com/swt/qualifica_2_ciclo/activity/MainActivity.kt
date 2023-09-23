@@ -1,11 +1,15 @@
-package com.swt.qualifica_2_ciclo
+package com.swt.qualifica_2_ciclo.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.google.android.material.tabs.TabItem
+import com.swt.qualifica_2_ciclo.fragments.Feed_Fragment
+import com.swt.qualifica_2_ciclo.fragments.NewPostFragment
+import com.swt.qualifica_2_ciclo.fragments.ProfileFragment
+import com.swt.qualifica_2_ciclo.R
+import com.swt.qualifica_2_ciclo.fragments.WebFragment
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var  btnFeed: Button
