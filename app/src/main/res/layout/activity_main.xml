@@ -26,23 +26,23 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button"
+                android:id="@+id/buttonFeed"
                 style="@style/button"
                 android:text="Feed" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button2"
+                android:id="@+id/buttonProfile"
                 style="@style/button"
                 android:text="Perfil" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button3"
+                android:id="@+id/buttonNewPost"
                 style="@style/button"
                 android:layout_weight="1"
                 android:text="Novo post" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button4"
+                android:id="@+id/buttonWeb"
                 style="@style/button"
                 android:layout_weight="1"
                 android:text="Site" />
